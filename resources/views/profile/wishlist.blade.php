@@ -26,50 +26,60 @@
         </div>
 
         {{-- Loop Kategori --}}
-    @foreach (auth()->user()->categories as $cat)
-        <a href="{{ route('categories.show', $cat->id) }}" class="relative bg-white shadow-lg shadow-black/20 rounded-xl overflow-hidden group hover:shadow-2xl hover:shadow-black/30 transition hover:-translate-y-1">
+        @foreach (auth()->user()->categories as $cat)
+            <div class="relative bg-white shadow-lg shadow-black/20 rounded-xl overflow-hidden group hover:shadow-2xl hover:shadow-black/30 transition hover:-translate-y-1">
             {{-- Gambar atas --}}
-            <div class="h-36 w-full">
+            <a href="{{ route('categories.show', $cat->id) }}" class="block h-36 w-full">
                 @if ($cat->bookmarks->count() > 0)
-                    <img src="{{ asset('storage/destinasi/' . $cat->bookmarks->first()->destination->image) }}"
-                         alt="{{ $cat->bookmarks->first()->destination->name }}"
-                         class="w-full h-full object-cover">
+                <img src="{{ asset('storage/destinasi/' . $cat->bookmarks->first()->destination->image) }}"
+                     alt="{{ $cat->bookmarks->first()->destination->name }}"
+                     class="w-full h-full object-cover">
                 @else
-                    <div class="w-full h-full bg-gray-100 flex items-center justify-center text-gray-400 text-xs">
-                        No Image
-                    </div>
+                <div class="w-full h-full bg-gray-100 flex items-center justify-center text-gray-400 text-xs">
+                    No Image
+                </div>
                 @endif
-            </div>
+            </a>
 
             {{-- Teks & info --}}
             <div class="p-4">
+                <a href="{{ route('categories.show', $cat->id) }}" class="block">
                 <h3 class="font-semibold text-sm">{{ $cat->name }}</h3>
                 <p class="text-xs text-gray-500">{{ $cat->bookmarks->count() }} wishlist</p>
+                </a>
             </div>
 
             {{-- Tombol titik tiga --}}
             <div x-cloak x-data="{ openMenu:false }" class="absolute top-3 right-3 z-10">
-                <button @click="openMenu = !openMenu" class="p-1 rounded-full bg-white shadow flex flex-col items-center justify-center w-7 h-7">
-                    <span class="block w-1 h-1 bg-gray-700 rounded-full mb-0.5"></span>
-                    <span class="block w-1 h-1 bg-gray-700 rounded-full mb-0.5"></span>
-                    <span class="block w-1 h-1 bg-gray-700 rounded-full"></span>
+                <button 
+                @click.stop="openMenu = !openMenu" 
+                class="p-1 rounded-full bg-white shadow flex flex-col items-center justify-center w-7 h-7"
+                type="button"
+                >
+                <span class="block w-1 h-1 bg-gray-700 rounded-full mb-0.5"></span>
+                <span class="block w-1 h-1 bg-gray-700 rounded-full mb-0.5"></span>
+                <span class="block w-1 h-1 bg-gray-700 rounded-full"></span>
                 </button>
                 <div x-show="openMenu" @click.away="openMenu = false"
-                    class="absolute right-0 mt-2 w-36 bg-white border shadow-lg rounded-lg text-sm z-50 py-1">
-                    <button
-                        @click="openEditModal({{ $cat->id }}, '{{ $cat->name }}')"
-                        class="w-full text-left px-4 py-2 hover:bg-gray-100">
-                        ✏️ Edit
-                    </button>
-                    <button
-                        @click="openDeleteModal({{ $cat->id }}, '{{ $cat->name }}')"
-                        class="w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100">
-                        🗑️ Delete
-                    </button>
+                class="absolute right-0 mt-2 w-36 bg-white border shadow-lg rounded-lg text-sm z-50 py-1">
+                <button
+                    @click="openEditModal({{ $cat->id }}, '{{ $cat->name }}'); openMenu = false"
+                    class="w-full text-left px-4 py-2 hover:bg-gray-100"
+                    type="button"
+                >
+                    ✏️ Edit
+                </button>
+                <button
+                    @click="openDeleteModal({{ $cat->id }}, '{{ $cat->name }}'); openMenu = false"
+                    class="w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100"
+                    type="button"
+                >
+                    🗑️ Delete
+                </button>
                 </div>
             </div>
-        </a>
-    @endforeach
+            </div>
+        @endforeach
 
     </div>
 
