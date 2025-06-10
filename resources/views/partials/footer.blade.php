@@ -19,30 +19,30 @@
       <div class="text-sm flex flex-col gap-2 w-full lg:w-auto text-center lg:text-left self-center lg:self-start">
         <h4 class="font-bold mb-1">Contact Us</h4>
         <div class="flex flex-col gap-2">
-          <div class="flex justify-center lg:justify-start items-center gap-2">
+            <a href="https://www.instagram.com/aufiifathin?igsh=ZjE3MDUyYW9oY2Yx&utm_source=qr" target="_blank" rel="noopener noreferrer" class="flex justify-center lg:justify-start items-center gap-2 hover:underline">
             <img src="/assets/ig-icon.png" alt="IG" class="w-4 h-4">
             <span>@aufifathin</span>
-          </div>
-          <div class="flex justify-center lg:justify-start items-center gap-2">
+            </a>
+            <a href="https://www.instagram.com/dwi.chy?igsh=NmVsdXJndGN5YnNw&utm_source=qr" target="_blank" rel="noopener noreferrer" class="flex justify-center lg:justify-start items-center gap-2 hover:underline">
             <img src="/assets/ig-icon.png" alt="IG" class="w-4 h-4">
             <span>@dwi.chy</span>
-          </div>
-          <div class="flex justify-center lg:justify-start items-center gap-2">
+            </a>
+          <a href="https://www.instagram.com/firaiklila?igsh=bGExdjFmcWw1ZTUz" target="_blank" rel="noopener noreferrer" class="flex justify-center lg:justify-start items-center gap-2 hover:underline">
             <img src="/assets/ig-icon.png" alt="IG" class="w-4 h-4">
             <span>@firaiklila</span>
-          </div>
-          <div class="flex justify-center lg:justify-start items-center gap-2 mt-2">
+          </a>
+            <a href="https://www.linkedin.com/in/aufii-fathin-nabila/" target="_blank" rel="noopener noreferrer" class="flex justify-center lg:justify-start items-center gap-2 mt-2 hover:underline">
             <img src="/assets/linkedin-icon.png" alt="LinkedIn" class="w-4 h-4">
-            <span>LinkedIn</span>
-          </div>
-          <div class="flex justify-center lg:justify-start items-center gap-2">
+            <span>Aufii Fathin Nabila</span>
+            </a>
+          <a href="https://www.linkedin.com/in/dwicahyaaa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noopener noreferrer" class="flex justify-center lg:justify-start items-center gap-2 hover:underline">
             <img src="/assets/linkedin-icon.png" alt="LinkedIn" class="w-4 h-4">
-            <span>LinkedIn</span>
-          </div>
-          <div class="flex justify-center lg:justify-start items-center gap-2">
+            <span>Dwi Cahya Maulani</span>
+          </a>
+            <a href="https://id.linkedin.com/in/firazaha" target="_blank" rel="noopener noreferrer" class="flex justify-center lg:justify-start items-center gap-2 hover:underline">
             <img src="/assets/linkedin-icon.png" alt="LinkedIn" class="w-4 h-4">
-            <span>LinkedIn</span>
-          </div>
+            <span>Fira Zaha Iklila</span>
+            </a>
         </div>
       </div>
 

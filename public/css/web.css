@@ -312,7 +312,8 @@ form {
 .search-wrapper {
     position: relative;
     width: 100%;
-    max-width: 400px;
+    max-width: 1250px;
+    margin-bottom: 30px;
 }
 
 .search-input {
@@ -348,7 +349,8 @@ form {
 .kategori-wrapper {
     position: relative;
     width: 100%;
-    max-width: 260px;
+    max-width: 280px;
+    margin-bottom: 30px;
 }
 
 .kategori-dropdown {
@@ -387,6 +389,16 @@ form {
     flex-wrap: wrap;
     margin-bottom: 40px;
 }
+
+.destinasi-container {
+    width: 100%;
+    max-width: 1000px;      /* Membatasi lebar maksimal container */
+    margin: 0 auto;         /* Agar container tetap di tengah */
+    padding: 50px 32px;     /* Tambahkan jarak kanan-kiri */
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
 
 /* Input search */
 .destinasi-search-input {
@@ -516,123 +528,3 @@ form {
     object-fit: contain;
 }
 
-
-/* DESKIRPSI DESTINASI */
-.detail-fullscreen {
-    width: 100%;
-    min-height: 100vh;
-    background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;}
-
-/* Tambah jarak dari navbar */
-.detail-title {
-    text-align: center;
-    font-size: 42px;
-    font-weight: bold;
-    margin: 120px 0 20px; /* top margin besar */
-    color: #222;
-}
-
-/* Gambar full screen */
-.detail-image-full {
-    width: 80%;
-    max-height: 550px;
-    object-fit: cover;
-    border-bottom: 2px solid #ddd;
-}
-
-/* Isi deskripsi di tengah */
-.detail-content {
-    max-width: 1200px;
-    padding: 40px 90px;
-    /* margin: 0 auto;  */
-    text-align: justify;
-    font-size: 16px;
-    color: #333;
-}
-
-.detail-content .deskripsi {
-    margin-bottom: 40px; /* jarak antara deskripsi dengan info */
-}
-
-.deskripsi {
-    color: #b0b0b0;
-
-}
-
-.detail-info p {
-    display: flex;
-    align-items: center;
-    margin-top: 40px;
-    margin-bottom: 14px;
-    font-size: 15px;
-}
-
-.info-item {
-    display: flex;
-    align-items: flex-start;
-    margin-bottom: 14px;
-}
-
-.icon-info {
-    width: 18px;
-    height: 18px;
-    margin-right: 10px;
-    margin-top: 4px; /* agar sejajar */
-}
-
-.info-text {
-    line-height: 1.4;
-}
-
-.alamat-link {
-    color: #333;
-    text-decoration: none;
-    display: inline-block;
-    margin-top: 2px;
-}
-
-.alamat-link:hover {
-    text-decoration: underline;
-}
-
-
-.detail-content p {
-    font-size: 18px;
-    color: #333;
-    margin: 10px 0;
-}
-
-.detail-content a {
-    color: #333;
-    text-decoration: none;
-}
-
-.detail-content a:hover {
-    text-decoration: underline;
-}
-
-.back-btn {
-    display: inline-block;
-    margin-top: 30px;
-    color: #316FF6;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-/* Baris sosmed sejajar */
-.social-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-
-/* Ukuran ikon sosmed */
-.social-icon {
-  width: 12px;
-  height: 12px;
-  object-fit: contain;
-}

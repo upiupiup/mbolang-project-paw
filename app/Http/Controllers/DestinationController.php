@@ -25,7 +25,7 @@ class DestinationController extends Controller
     public function list()
     {
         $destinations = Destination::all(); // Atau bisa pake paginate
-        return view('destinations.index', compact('destinations'));
+        return view('destination.index', compact('destinations'));
     }
 
     public function show($id)

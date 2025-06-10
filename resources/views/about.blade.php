@@ -7,18 +7,18 @@
 
     <!-- Hero Section -->
     <!-- Section: Hero -->
-    <section style="text-align: center; padding: 80px 0 40px;">
+    <section style="text-align: center; padding: 120px 0 40px;">
         <h1 style="font-size: 36px; font-weight: 700; margin-bottom: 10px;">Looking for adventure?</h1>
         <p style="font-size: 18px; color: #555;">You're in the right place!</p>
 
         <!-- Logo MBOLANG -->
-        <div style="margin: 0px 0; display: flex; justify-content: center;">
+        <div style="margin: 40px 0; display: flex; justify-content: center;">
             <img src="{{ asset('assets/logo.png') }}" alt="MBOLANG Logo" style="margin-top: 10px;margin-bottom: 10px; width: 500px; height: auto; align-items:center;">
         </div>
     </section>
 
     <!-- What is MBOLANG -->
-    <div style="text-align: center; margin-bottom: 30px;">
+    <div style="text-align: center; margin-bottom: 50px; margin-top: 30px;">
         <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 20px;">What is MBOLANG?</h2>
         <div style="max-width: 700px; margin: 0 auto; background: #f9f9f9; padding: 24px; border-radius: 12px; box-shadow: 0 6px 16px rgba(0,0,0,0.05);">
             <p style="font-size: 16px; color: #444;">
@@ -29,7 +29,7 @@
     </div>
 
     <!-- Our Missions Section -->
-    <section style="padding: 60px 5%;">
+    <section style="padding: 60px 5%; margin-top: 80px;">
         <h2 style="text-align: left; font-size: 28px; font-weight: 700; margin-bottom: 30px; color: #111;">
             Our Missions
         </h2>
@@ -71,7 +71,7 @@
     </section>
 
     <!-- Our Services -->
-    <div style="text-align: center;">
+    <div style="text-align: center; margin-top: 80px; padding: 0 5%; margin-bottom: 80px;">
         <h2 style="font-size: 24px; font-weight: 700; margin-bottom: 50px;margin-top: 50px;">Our Services</h2>
         <div style="display: flex; flex-wrap: wrap; gap: 32px; justify-content: center;">
             <div style="width: 240px; background: #fff; padding: 20px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
