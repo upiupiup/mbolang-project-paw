@@ -48,7 +48,7 @@
                         <button
                             @click.prevent="openDeleteModal({{ $bookmark->id }}, '{{ $bookmark->destination->name }}', '{{ route('bookmarks.destroy', $bookmark->id) }}')"
                             class="w-full text-left px-6 py-2 text-red-600 hover:bg-gray-100">
-                            🗑️ Remove
+                            Remove
                         </button>
                     </div>
                 </div>
