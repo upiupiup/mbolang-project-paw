@@ -24,7 +24,7 @@
         </a>
       </li>
       @auth
-        <!-- ✅ Dropdown Profile Toggle -->
+        <!-- Dropdown Profile Toggle -->
         <li class="relative" x-data="{ open: false }">
           <button @click="open = !open"
             class="flex items-center gap-2 px-5 py-1 border border-gray-800 rounded-full hover:border-[#799fcf] hover:text-[#799fcf] transition group">
@@ -39,7 +39,16 @@
           <div x-show="open" x-cloak @click.away="open = false" x-transition
                class="absolute right-0 mt-3 w-56 bg-white rounded-xl shadow-lg border text-sm z-50">
             <div class="p-4 text-center border-b">
-              <div class="w-12 h-12 mx-auto bg-gray-200 rounded-full"></div>
+              @php
+                $photo = Auth::user()->profile_photo
+                    ? asset('storage/' . Auth::user()->profile_photo)
+                    : asset('images/default.jpeg'); // fallback ke default
+              @endphp
+
+              <img src="{{ $photo }}"
+                  alt="Profile Photo"
+                  class="w-12 h-12 mx-auto rounded-full object-cover border border-gray-300 shadow" />
+
               <p class="mt-2 font-semibold">{{ Auth::user()->name }}</p>
             </div>
             <ul class="divide-y">
@@ -75,7 +84,7 @@
           </div>
         </li>
       @else
-        <!-- 🔓 Tombol Login kalau belum login -->
+        <!-- Tombol Login kalau belum login -->
         <li>
           <a href="{{ route('login') }}"
              class="px-5 py-1 border border-gray-800 rounded-full transition 

@@ -67,14 +67,14 @@
                     class="w-full text-left px-4 py-2 hover:bg-gray-100"
                     type="button"
                 >
-                    ✏️ Edit
+                    Edit
                 </button>
                 <button
                     @click="openDeleteModal({{ $cat->id }}, '{{ $cat->name }}'); openMenu = false"
                     class="w-full text-left px-4 py-2 text-red-600 hover:bg-gray-100"
                     type="button"
                 >
-                    🗑️ Delete
+                    Delete
                 </button>
                 </div>
             </div>
@@ -91,7 +91,8 @@
                 class="w-full border p-2 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-[#376FB7]"
                 placeholder="Category name">
             <div class="flex justify-center gap-2 mb-5">
-                <button @click="editModalOpen = false" class="px-6 py-2 border rounded-full text-gray-700 hover:bg-gray-100 transition font-semibold">Cancel</button>
+                <button @click="editModalOpen = false" class="bg-white border border-[#376FB7] text-[#376FB7] font-semibold px-6 py-2 rounded-full shadow cursor-pointer hover:bg-[#376FB7] hover:text-white hover:border-[#376FB7] transition">
+                    Cancel</button>
                 <button 
                     @click.prevent="updateCategory" 
                     :disabled="!editCategoryName.trim()" 
@@ -111,7 +112,9 @@
                 Yakin ingin menghapus kategori "<span class="font-semibold" x-text="editCategoryName"></span>"?
             </p>
             <div class="flex justify-center gap-2 mb-5">
-                <button @click="deleteModalOpen = false" class="px-6 py-2 border rounded-full text-gray-700 hover:bg-gray-100 transition font-semibold">Cancel</button>
+                <button @click="deleteModalOpen = false" class="bg-white border border-[#376FB7] text-[#376FB7] font-semibold px-6 py-2 rounded-full shadow cursor-pointer hover:bg-[#376FB7] hover:text-white hover:border-[#376FB7] transition">
+                    Cancel
+                </button>
                 <button 
                     @click="deleteCategory" 
                     class="bg-red-600 text-white font-semibold px-6 py-2 rounded-full hover:bg-red-700 transition"
@@ -130,7 +133,9 @@
                 class="w-full border p-2 rounded mb-4 focus:outline-none focus:ring-2 focus:ring-[#376FB7]"
                 placeholder="Category name">
             <div class="flex justify-center gap-2 mb-5">
-                <button @click="createModalOpen = false" class="px-6 py-2 border rounded-full text-gray-700 hover:bg-gray-100 transition font-semibold">Cancel</button>
+                <button @click="createModalOpen = false" 
+class="bg-white border border-[#376FB7] text-[#376FB7] font-semibold px-6 py-2 rounded-full shadow cursor-pointer hover:bg-[#376FB7] hover:text-white hover:border-[#376FB7] transition">
+                    Cancel</button>
                 <button 
                     @click.prevent="createNewCategory" 
                     :disabled="!newCategoryName.trim()" 

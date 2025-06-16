@@ -7,7 +7,7 @@
 
     {{-- Search bar besar --}}
     <div class="search-wrapper" style="margin-bottom: 24px; margin-top: 80px;">
-        <input type="text" placeholder="Mau liburan ke mana?" class="search-input">
+        <input type="text" placeholder="Mau liburan ke mana?" class="search-input" id="searchInput">
         <img src="{{ asset('assets/search.png') }}" alt="Cari" class="search-icon">
     </div>
 
@@ -64,6 +64,38 @@
 
             boxes.forEach(box => {
                 const nama = box.querySelector('.destinasi-nama').textContent.toLowerCase();
+                const kategori = box.getAttribute('data-kategori');
+                const cocokNama = nama.includes(keyword);
+                const cocokKategori = selectedKategori === "" || kategori === selectedKategori;
+
+                const tampil = cocokNama && cocokKategori;
+                box.style.display = tampil ? 'block' : 'none';
+                if (tampil) ditemukan = true;
+            });
+
+            notFoundMessage.style.display = ditemukan ? 'none' : 'block';
+        }
+
+        dropdown.addEventListener('change', filterDestinasi);
+        searchInput.addEventListener('input', filterDestinasi);
+    });
+</script>
+
+{{-- Script pencarian --}}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const dropdown = document.getElementById('filterKategori');
+        const searchInput = document.getElementById('searchInput');
+        const boxes = document.querySelectorAll('.destinasi-box');
+        const notFoundMessage = document.getElementById('notFoundMessage');
+
+        function filterDestinasi() {
+            const selectedKategori = dropdown.value.toLowerCase();
+            const keyword = searchInput.value.toLowerCase().trim();
+            let ditemukan = false;
+
+            boxes.forEach(box => {
+                const nama = box.getAttribute('data-nama');
                 const kategori = box.getAttribute('data-kategori');
                 const cocokNama = nama.includes(keyword);
                 const cocokKategori = selectedKategori === "" || kategori === selectedKategori;

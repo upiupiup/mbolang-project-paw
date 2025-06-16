@@ -30,15 +30,18 @@ public function store(Request $request): RedirectResponse
         'password' => ['required'],
     ]);
 
-    if (!Auth::attempt($request->only('email', 'password'), $request->boolean('remember'))) {
-        return back()->withErrors([
-            'email' => 'Email atau password salah.',
-        ]);
+    //session cookies
+    if (Auth::attempt($request->only('email', 'password'), true)) {
+        $request->session()->regenerate();
+
+        $request->session()->put('check', 'logged in');
+
+        return redirect()->intended('/');
     }
 
-    $request->session()->regenerate();
-
-    return redirect()->intended('/'); // ✅ redirect ke landing page setelah login
+    return back()->withErrors([
+        'email' => 'Email atau password salah.',
+    ]);
 }
 
 
